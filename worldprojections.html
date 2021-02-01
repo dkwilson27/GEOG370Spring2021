@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projections</title>
+</head>
+<body>
+    <h1>In this project I learned how to display images in different projections</h1>
+    
+    <p>I displayed different projections on the world map by using QGIS. My first step was to use the shapfile base layer, then I used the
+        Indicatrix Matrix plugin in QGIS. This added latitude and longitude lines onto the base layer as well as Tissot's Indicatrices. Next,
+        I chose the projection name and EPSG and added it to the map.
+    </p>
+    
+    <h2>WGS84 Mercator Projection</h2>
+    <h3>This cylindrical projection is often used by websites like google maps, and is useful due to its accurate representation of 
+        distance. This type of map also shows a fairly accurate representation of the shapes of continents. The downside to this map
+        is the inaccurate representation of the size of some continents which had to be stretched to fit the shape at the top and bottom. 
+    </h3>
+    <a href="./maps/4326.png">
+    <img src=".//maps/4326.png" alt="WGS84" width='500px'>
+    </a>
+    <h2>Aitoff Projection</h2>
+    <h3>This azimuthal map projection gives a relatively accurate depiction of land masses in the world around the center of the map, and begins to distort
+        the image at the sides of the ellipse. It shows and equal-area map projection.
+    </h3>
+    <a href=".//maps/54043.png">
+    <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>WGS84 Psuedo-Mercator Projection</h2>
+    <h3>This is a cylindrical mercator projection. Like the previous WGS84, it is useful due to its accurate representation of 
+        distance and angles. This type of map also shows a accurate representation of the shapes of continents. The downside to this map
+        is the inaccurate representation of the size of some continents. The difference between this mercator map and the previous, is that
+        there is less distortion along the poles.</h3>
+    <a href="./mymaps/EPSG-3857.png">
+    <img src=".//mymaps/EPSG-3857.png" alt="WGS84" width='500px'>
+    </a>
+    <h2>Sphere Winkel I Projection/Winkel Tripel Projection</h2>
+    <h3>This azimuthal map is a cylindrical projection. On this map, the meridian is straight, while the rest of the longitude lines are curved.
+        This map is the one adopted by National Geographic because it minimizes area, distance, and direction distortion.
+        A downside to this map is that it is not equidistant and although it trys to minimize distortion, there is still some.</h3>
+    <a href="./mymaps/EPSG-53018.png">
+    <img src=".//mymaps/EPSG-53018.png" alt="WGS84" width='500px'>
+    </a>
+    <h2>World Cylindrical Equal Area Projection</h2>
+    <h3>This map is a cylindrical projection of the globe. Because the poles are straight lines parallel to the equator, there is 
+        a large amount of distortion along the top and bottom of the map. This conformal map preserves angles.
+    </h3>
+    <a href="./mymaps/EPSG_54034.png">
+    <img src=".//mymaps/EPSG_54034.png" alt="WGS84" width='500px'>
+    </a>
+    <h2>World Equidistant Conic Projection</h2>
+    <h3>This map is a conic projection of the globe. This map is beneficial because it portrays earth's areas accurately. The downside to this type of map is the 
+        distortion which occurs along the bottom. This type is best used to represent land masses along mid-latitudes. This map is also equidistant along the meridians.
+    </h3>
+    <a href="./mymaps/EPSG-54027.png">
+    <img src=".//mymaps/EPSG-54027.png" alt="WGS84" width='500px'>
+    </a>
+    <h2>North Pole Azimuthal Projection</h2>
+    <h3>This map is an azimuthal projection of the globe. This map is beneficial because it has minimal distortion due to the fact that the meridians extend from the north pole.
+        A downside to this map style is that it adds a high level of distortion when not looking at one of the poles.
+    </h3>
+    <a href=".//mymaps/EPSG-102016.png">
+    <img src=".//mymaps/EPSG-102016.png" alt="WGS84" width='500px'>
+    </a>
+    <h2>World Winkel II Projection</h2>
+    <h3>This map is a cylindrical projection of the globe. It is similiar to the Sphere Winkel I projection as they are both Winkel Tripel projections, but this map's longitude lines are less 
+        curved and the map features slightly less distortion because of it. This map is the one adopted by National Geographic because it minimizes area, distance, and direction distortion.
+        A downside to this map is that it is not equidistant and although it trys to minimize distortion.
+    </h3>
+    <a href=".//mymaps/EPSG-54019.png">
+    <img src=".//mymaps/EPSG-54019.png" alt="WGS84" width='500px'>
+    </a>
+    <h2>World Van der Griten I</h2>
+    <h3>This map is a cylindrical projection of the globe. It is neither equal-area nor conformal. The idea of this projection is to fit the world into one circle. Due to this it shows distortion 
+        at the poles. However, like the Mercator map, this map also preserves distance.
+    </h3>
+    <a href=".//mymaps/EPSG-54029.png">
+    <img src=".//mymaps/EPSG-54029.png" alt="WGS84" width='500px'>
+    </a>
+    <p></p>
+    <h2>Data used for this project</h2>
+    <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip"> Download Natrual Earth 1:10m Cultural Vector </a>
+</body>
+</html>
