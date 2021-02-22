@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Map</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+
+   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+
+   <script src = "./data/old_well_4326.geojson"></script>
+
+</head>
+<body>
+
+    <div id="mapid"></div>
+    <style>
+        #mapid{ width: 900px; height: 500px;}
+    </style>
+
+    <script>
+        var map = L.map('mapid').setView([35.91, -79.05], 17);
+        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        }).addTo(map);
+        
+        
+        // L.geoJSON(uncwell).addTo(map)
+
+
+
+        L.marker([35.9094, -79.0497]).addTo(map)
+            .bindPopup("Wilson Library")
+            .openPopup();
+
+        L.marker([35.9102, -79.0476]).addTo(map)
+            .bindPopup("Student Union")
+            .openPopup();
+
+        L.marker([35.9101, -79.0486]).addTo(map)
+            .bindPopup("The Pit")
+            .openPopup();
+
+            var uncIcon = L.icon({ // notice the L.icon which is a Leaflet object with properties
+            iconUrl: 'https://campusrec.unc.edu/wp-content/uploads/2015/08/the-pit-585x392.jpg',
+            // this points to a jpg image obtained from the internet
+            iconSize: [50,50], // size of the icon
+            popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
+            });
+            var customPopup = "The Pit<br/><img src='https://campusrec.unc.edu/wp-content/uploads/2015/08/the-pit-585x392.jpg'width='100px'/"; 
+           
+        L.marker([35.9101, -79.0486], {icon: uncIcon}).addTo(map) // c
+            .bindPopup("The Pit")
+            .openPopup(); // d
+             // 
+
+            var uncIcon1 = L.icon({ // notice the L.icon which is a Leaflet object with properties
+            iconUrl: 'https://i.pinimg.com/originals/04/cb/8e/04cb8e64fe5c604dd43f9f3f02cbb051.jpg',
+            // this points to a jpg image obtained from the internet
+            iconSize: [50,50], // size of the icon
+            popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
+            });
+            var customPopup = "Student Union<br/><img src='https://i.pinimg.com/originals/04/cb/8e/04cb8e64fe5c604dd43f9f3f02cbb051.jpg'width='100px'/"; 
+           
+        L.marker([35.9102, -79.0476], {icon: uncIcon1}).addTo(map) // c
+            .bindPopup("Student Union")
+            .openPopup();
+            
+            var uncIcon2 = L.icon({ // notice the L.icon which is a Leaflet object with properties
+            iconUrl: 'https://library.unc.edu/wp-content/uploads/2019/08/wilson2.jpg',
+            // this points to a jpg image obtained from the internet
+            iconSize: [50,50], // size of the icon
+            popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
+            });
+            var customPopup = "Wilson Library<br/><img src='https://library.unc.edu/wp-content/uploads/2019/08/wilson2.jpg'width='100px'/"; 
+           
+        L.marker([35.9094, -79.0497], {icon: uncIcon2}).addTo(map) // c
+            .bindPopup("Wilson Library")
+            .openPopup();
+    </script>
+
+    
+</body>
+</html>
